@@ -2,7 +2,7 @@ package cz.uhk.zlomky.data;
 
 //alt + insert -- generovani get a set
 
-public class Zlomek {
+public class Zlomek extends Number{
     private int citatel;
     private int jmenovatel;
 
@@ -10,6 +10,28 @@ public class Zlomek {
         citatel = 0;
         jmenovatel = 1;
     } //default konstruktor
+
+    @Override
+    public int intValue() {
+        return (int)doubleValue();
+        //return (int) longValue();
+    }
+
+    @Override
+    public long longValue() {
+        return (long)doubleValue();
+        //return Math.round(doubleValue());
+    }
+
+    @Override
+    public float floatValue() {
+        return (float)doubleValue();
+    }
+
+    @Override
+    public double doubleValue() {
+        return citatel / (double)jmenovatel;
+    }
 
     public Zlomek(int citatel, int jmenovatel) {
         this.citatel = citatel;
